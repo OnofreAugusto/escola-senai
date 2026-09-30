@@ -15,4 +15,15 @@ export class CursosController {
         console.log(name)
         return `Informações sobre o curso técnico: ${name}`
     }
+
+    @Get(":sigla/modulo/:numero")
+    getModulo(
+        @Param('sigla') sigla: string,
+        @Param('numero') numero: number
+    ) {
+        return {
+            curso: sigla,
+            moduloConsultado: numero
+        }
+    }
 }
